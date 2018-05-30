@@ -92,6 +92,7 @@
         $server_columns = array(
             'name' => PDO::PARAM_STR,
             'address' => PDO::PARAM_STR,
+            'group' => PDO::PARAM_STR,
             'modtitle' => PDO::PARAM_STR,
             'modwebsite' => PDO::PARAM_STR,
             'modicon32' => PDO::PARAM_STR,
@@ -272,6 +273,7 @@
 
         $game_copy_fields = array(
             'Name' => 'name',
+            'Group' => 'group',
             'Mod' => 'mod',
             'Version' => 'version',
             'ModTitle' => 'modtitle',

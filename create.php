@@ -26,6 +26,7 @@
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name VARCHAR,
                     address VARCHAR UNIQUE,
+                    group VARCHAR,
                     ts INTEGER,
                     state INTEGER,
                     map VARCHAR,

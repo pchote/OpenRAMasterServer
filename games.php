@@ -36,8 +36,18 @@ function query_games($protocol)
         $rows = order_servers($query->fetchAll());
 
         $servers = array();
+        $displayed_groups = array();
         foreach ($rows as $row)
         {
+            // Grouped servers should only show the first (sorted) empty server
+            if ($row['state'] == 0 && $row['group'])
+            {
+                if (in_array($displayed_groups, $row['group'])
+                    continue;
+
+                $displayed_groups[] = $row['group'];
+            }
+
             // Attempt country lookup for consumers that don't have their own GeoIP facilities
             if (ENABLE_GEOIP)
             {
